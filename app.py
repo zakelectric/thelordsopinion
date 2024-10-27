@@ -260,25 +260,25 @@ def guideline_gopher(store_name):
 
 def main():
 
-    # Start with the disclaimer
-    placeholder_01 = st.empty()
-    placeholder_02 = st.empty()
-    placeholder_03 = st.empty()
+    # # Start with the disclaimer
+    # placeholder_01 = st.empty()
+    # placeholder_02 = st.empty()
+    # placeholder_03 = st.empty()
 
-    placeholder_01.title("WELCOME TO GUIDELINE GOPHER!")
-    placeholder_02.write('<center>/\\\/\\\<br>/&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;\<br>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>\~(*)~/<br></center>', unsafe_allow_html=True)
-    placeholder_03.write("<br><B>USE GUIDELINE GOPHER TO SEARCH MORTGAGE GUIDELINES WITH A.I.    A FEW NOTES:</b> \n - Guideline Gopher is provided as is without warranties of any kind. You as the user agree not to hold Guideline Gopher or it's creator(s) liable for any inaccuracies or misenterpretations arising from the use of Guideline Gopher. \n - You as the user agree that it is your sole responsibility to verify the information provided by Guideline Gopher. You as the user understand that Guideline Gopher will not always be accurate and the information provided should be verified with an industry professional. \n - You as the user understand that guidelines provided by Guideline Gopher are subject to change and may not always be the most up-to-date version. \n - All the cool kids follow us on instagram www.instagram.com/guideline.gopher \n - Love/hate the Gopher? Wanna marry the Gopher? Struggling with a scenario? <b>Text or call! (714) 313-0627</b>", unsafe_allow_html=True)
+    # placeholder_01.title("WELCOME TO GUIDELINE GOPHER!")
+    # placeholder_02.write('<center>/\\\/\\\<br>/&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;\<br>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>\~(*)~/<br></center>', unsafe_allow_html=True)
+    # placeholder_03.write("<br><B>USE GUIDELINE GOPHER TO SEARCH MORTGAGE GUIDELINES WITH A.I.    A FEW NOTES:</b> \n - Guideline Gopher is provided as is without warranties of any kind. You as the user agree not to hold Guideline Gopher or it's creator(s) liable for any inaccuracies or misenterpretations arising from the use of Guideline Gopher. \n - You as the user agree that it is your sole responsibility to verify the information provided by Guideline Gopher. You as the user understand that Guideline Gopher will not always be accurate and the information provided should be verified with an industry professional. \n - You as the user understand that guidelines provided by Guideline Gopher are subject to change and may not always be the most up-to-date version. \n - All the cool kids follow us on instagram www.instagram.com/guideline.gopher \n - Love/hate the Gopher? Wanna marry the Gopher? Struggling with a scenario? <b>Text or call! (714) 313-0627</b>", unsafe_allow_html=True)
                                     
-    placeholder_button = st.empty()
+    # placeholder_button = st.empty()
 
-    if 'acknowledged' not in st.session_state:
-        st.session_state.acknowledged = False
+    # if 'acknowledged' not in st.session_state:
+    #     st.session_state.acknowledged = False
 
-    if placeholder_button.button("I HAVE READ AND AGREE"):
-        st.session_state.acknowledged = True
+    # if placeholder_button.button("I HAVE READ AND AGREE"):
+    #     st.session_state.acknowledged = True
 
-    # Show functionality if disclaimer is acknowledged
-    if st.session_state.acknowledged:
+    # # Show functionality if disclaimer is acknowledged
+    # if st.session_state.acknowledged:
 
         placeholder_03.empty()
         placeholder_03.write("<br><center><b>HOW TO USE</b></center> <br> - Select the guideline you'd like to examine OR select 'Upload my own PDF'. <br> - Ask your question and the Gopher will answer your question on the left and show you the source on the right. <br> - Use the 'See next source' button to see the 3 sources Guideline Gopher generated your answer from. <br> - Love/hate the Gopher? Wanna marry the Gopher? Struggling with a scenario? <b>Text or call! (714) 313-0627</b> <br> - All the cool kids follow us on instagram www.instagram.com/guideline.gopher <br> ", unsafe_allow_html=True)
