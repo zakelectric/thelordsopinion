@@ -264,9 +264,7 @@ def main():
 
     st.sidebar.header("ASK YOUR QUESTION BELOW")
 
-    guideline_option = 'King James'
-
-    guideline_option = st.sidebar.selectbox('Select a translation', ('(Select translation)', 'Upload my own PDF', 'King James'))
+    guideline_option = st.sidebar.selectbox('Select a translation', ('King James', 'Upload my own PDF'))
 
     if guideline_option == 'King James':
         st.header("The King James translation of The Holy Bible")
