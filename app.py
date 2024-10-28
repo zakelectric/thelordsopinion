@@ -262,12 +262,12 @@ def main():
 
     pdf = ""
 
-    st.sidebar.header("'--' THE GUIDELINE GOPHER '--'")
+    st.sidebar.header("ASK YOUR QUESTION BELOW")
 
     guideline_option = st.sidebar.selectbox('Select a translation', ('(Select a loan guideline)', 'Upload my own PDF', 'King James'))
     guideline_option = 'King James'
     if guideline_option == 'King James':
-        st.header("King James")
+        st.header("The King James translation of The Holy Bible")
         store_name = 'King James'
         guideline_gopher(store_name)
 
