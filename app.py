@@ -239,7 +239,7 @@ def guideline_gopher(store_name):
         
         
         # Button to cycle through sources
-        if st.sidebar.button("See next source"):
+        if st.sidebar.button("See another source"):
             st.sidebar.empty()
 
         if st.session_state.increment == 0:
@@ -264,9 +264,10 @@ def main():
 
     st.sidebar.header("ASK YOUR QUESTION BELOW")
 
+    guideline_option = 'King James'
+
     guideline_option = st.sidebar.selectbox('Select a translation', ('(Select translation)', 'Upload my own PDF', 'King James'))
 
-    #guideline_option = 'King James'
     if guideline_option == 'King James':
         st.header("The King James translation of The Holy Bible")
         store_name = 'King James'
@@ -448,7 +449,7 @@ def main():
 
 
                     # Button to cycle through sources
-                    if st.sidebar.button("See next source"):
+                    if st.sidebar.button("See another source"):
                         st.sidebar.empty()
 
                     if st.session_state.increment == 0:
