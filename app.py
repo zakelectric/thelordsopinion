@@ -264,7 +264,7 @@ def main():
 
     st.sidebar.header("ASK YOUR QUESTION BELOW")
 
-    guideline_option = st.sidebar.selectbox('Select a translation', ('(Select a loan guideline)', 'Upload my own PDF', 'King James'))
+    guideline_option = st.sidebar.selectbox('Select a translation', ('(Select translation)', 'Upload my own PDF', 'King James'))
     guideline_option = 'King James'
     if guideline_option == 'King James':
         st.header("The King James translation of The Holy Bible")
@@ -311,13 +311,13 @@ def main():
 
 
             # UNCOMMENT TO DOWNLOAD VECTOR DATA
-            # with open(f'{store_name}.pkl', 'rb') as file:
-            #    st.download_button(
-            #        label="Download vector data",
-            #        data=file,
-            #        file_name=f'{store_name}.pkl',
-            #        mime='application/octet-stream'
-            #        )
+            with open(f'{store_name}.pkl', 'rb') as file:
+               st.download_button(
+                   label="Download vector data",
+                   data=file,
+                   file_name=f'{store_name}.pkl',
+                   mime='application/octet-stream'
+                   )
 
             pdf.seek(0)
 
