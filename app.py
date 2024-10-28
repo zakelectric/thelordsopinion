@@ -273,12 +273,12 @@ def main():
 
     if guideline_option == 'The Greek Septuagint':
         st.header("The Greek Septuagint version of The Holy Bible")
-        store_name = 'The Greek Septuagint'
+        store_name = 'Septuagint-English'
         guideline_gopher(store_name)
 
     if guideline_option == 'The New International Version':
         st.header("The New International Version of the Holy Bible")
-        store_name = 'The New International Version of the Bible'
+        store_name = 'NIV-Bible'
         guideline_gopher(store_name)
 
     # Take a different route if 'Upload my own'
