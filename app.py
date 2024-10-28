@@ -264,11 +264,21 @@ def main():
 
     st.sidebar.header("ASK YOUR QUESTION BELOW")
 
-    guideline_option = st.sidebar.selectbox('Select a translation', ('King James', 'Upload my own PDF'))
+    guideline_option = st.sidebar.selectbox('Select a translation', ('King James', 'The New International Version', 'The Greek Septuagint', 'Upload my own PDF'))
 
     if guideline_option == 'King James':
         st.header("The King James translation of The Holy Bible")
         store_name = 'King James'
+        guideline_gopher(store_name)
+
+    if guideline_option == 'The Greek Septuagint':
+        st.header("The Greek Septuagint version of The Holy Bible")
+        store_name = 'The Greek Septuagint'
+        guideline_gopher(store_name)
+
+    if guideline_option == 'The New International Version':
+        st.header("The New International Version of the Holy Bible")
+        store_name = 'The New International Version of the Bible'
         guideline_gopher(store_name)
 
     # Take a different route if 'Upload my own'
