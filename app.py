@@ -273,75 +273,10 @@ def main():
         store_name = 'King James'
         guideline_gopher(store_name)
 
-
-    if guideline_option == 'FHA 4000.1 5/20/24':
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
-        st.header("FHA handbook 4000.1 - Issued May 20th, 2024")
-        store_name = '4000.1_5.20.24'
-        guideline_gopher(store_name)
-
-    if guideline_option == 'FHA 4000.1 11/31/23':
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
-        st.header("FHA handbook 4000.1 - Issued October 31st, 2023")
-        store_name = '4000.1_10.31.23'
-        guideline_gopher(store_name)
-
-
-    if guideline_option == 'Conventional (Fannie) 11/1/23':
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
-        st.header("Fannie Mae Selling Guide - Published November 1st, 2023")
-        store_name = 'FannieMae_11.1.23'
-        guideline_gopher(store_name)
-
-
-    if guideline_option == 'Conventional (Fannie) 5/1/24':
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
-        st.header("Fannie Mae Selling Guide - Published May 1st, 2024")
-        store_name = 'FannieMae_5.1.24'
-        guideline_gopher(store_name)
-    
-
-    if guideline_option == 'Conventional (Freddie) 11/1/23':
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
-        st.header("Current as of Bulletin 2023-22, Published on 11/01/23")
-        store_name = 'Freddie_11.1.23'
-        guideline_gopher(store_name)
-
-
-    if guideline_option == 'Conventional (Freddie) 6/12/24':
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
-        st.header("Current as of Bulletin 2023-22, Published on 6.12.24")
-        store_name = 'freddie_6.12.24'
-        guideline_gopher(store_name)
-
-
-    if guideline_option == 'USDA hb-1-3550 3/15/19':
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
-        st.header("USDA HB-1-3550 Loan Origination Handbook - Revised March 15th, 2019")
-        store_name = 'hb_1_3550'
-        guideline_gopher(store_name)
     
 
     # Take a different route if 'Upload my own'
     if guideline_option == 'Upload my own PDF':
-
-        placeholder_01.empty()
-        placeholder_02.empty()
-        placeholder_03.empty()
         
         pdf = st.sidebar.file_uploader("Upload your PDF here", type='pdf')
         #st.sidebar.write(pdf) Debugging
