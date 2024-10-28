@@ -265,13 +265,12 @@ def main():
     st.sidebar.header("ASK YOUR QUESTION BELOW")
 
     guideline_option = st.sidebar.selectbox('Select a translation', ('(Select translation)', 'Upload my own PDF', 'King James'))
-    guideline_option = 'King James'
+
+    #guideline_option = 'King James'
     if guideline_option == 'King James':
         st.header("The King James translation of The Holy Bible")
         store_name = 'King James'
         guideline_gopher(store_name)
-
-    
 
     # Take a different route if 'Upload my own'
     if guideline_option == 'Upload my own PDF':
