@@ -26,7 +26,7 @@ import logging
 #################### CONFIGURATION ####################
 
 # Set test true or false so that the Gopher uses the test AWS bucket or the regular bucket
-test = True
+test = False
 
 if test == True:
     BUCKET_NAME = 'guidelinegopher-test'
@@ -271,293 +271,285 @@ def main():
                                     
     placeholder_button = st.empty()
 
-    if 'acknowledged' not in st.session_state:
-        st.session_state.acknowledged = False
 
-    if placeholder_button.button("I HAVE READ AND AGREE"):
-        st.session_state.acknowledged = True
+    placeholder_03.empty()
+    placeholder_03.write("<br><center><b>HOW TO USE</b></center> <br> - Select the guideline you'd like to examine OR select 'Upload my own PDF'. <br> - Ask your question and the Gopher will answer your question on the left and show you the source on the right. <br> - Use the 'See next source' button to see the 3 sources Guideline Gopher generated your answer from. <br> - Love/hate the Gopher? Wanna marry the Gopher? Struggling with a scenario? <b>Text or call! (714) 313-0627</b> <br> - All the cool kids follow us on instagram www.instagram.com/guideline.gopher <br> ", unsafe_allow_html=True)
 
-    # Show functionality if disclaimer is acknowledged
-    if st.session_state.acknowledged:
+    placeholder_button.empty()
 
+    pdf = ""
+
+    st.sidebar.header("'--' THE GUIDELINE GOPHER '--'")
+
+    guideline_option = st.sidebar.selectbox('Select a loan guideline', ('(Select a loan guideline)', 'Upload my own PDF', 'Conventional (Fannie) 5/1/24', 'Conventional (Fannie) 11/1/23', 'Conventional (Freddie) 6/12/24', 'Conventional (Freddie) 11/1/23', 'FHA 4000.1 5/20/24', 'FHA 4000.1 11/31/23', 'VA Pamphlet 26_7', 'USDA hb-1-3550 3/15/19'))
+
+
+    if guideline_option == 'VA Pamphlet 26_7':
+        placeholder_01.empty()
+        placeholder_02.empty()
         placeholder_03.empty()
-        placeholder_03.write("<br><center><b>HOW TO USE</b></center> <br> - Select the guideline you'd like to examine OR select 'Upload my own PDF'. <br> - Ask your question and the Gopher will answer your question on the left and show you the source on the right. <br> - Use the 'See next source' button to see the 3 sources Guideline Gopher generated your answer from. <br> - Love/hate the Gopher? Wanna marry the Gopher? Struggling with a scenario? <b>Text or call! (714) 313-0627</b> <br> - All the cool kids follow us on instagram www.instagram.com/guideline.gopher <br> ", unsafe_allow_html=True)
-
-        placeholder_button.empty()
-
-        pdf = ""
-
-        st.sidebar.header("'--' THE GUIDELINE GOPHER '--'")
-
-        guideline_option = st.sidebar.selectbox('Select a loan guideline', ('(Select a loan guideline)', 'Upload my own PDF', 'Conventional (Fannie) 5/1/24', 'Conventional (Fannie) 11/1/23', 'Conventional (Freddie) 6/12/24', 'Conventional (Freddie) 11/1/23', 'FHA 4000.1 5/20/24', 'FHA 4000.1 11/31/23', 'VA Pamphlet 26_7', 'USDA hb-1-3550 3/15/19'))
+        st.header("VA Lender's Handbook - Pamphlet 26-7")
+        store_name = 'VA_pamphlet_26_7'
+        guideline_gopher(store_name)
 
 
-        if guideline_option == 'VA Pamphlet 26_7':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("VA Lender's Handbook - Pamphlet 26-7")
-            store_name = 'VA_pamphlet_26_7'
-            guideline_gopher(store_name)
+    if guideline_option == 'FHA 4000.1 5/20/24':
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
+        st.header("FHA handbook 4000.1 - Issued May 20th, 2024")
+        store_name = '4000.1_5.20.24'
+        guideline_gopher(store_name)
+
+    if guideline_option == 'FHA 4000.1 11/31/23':
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
+        st.header("FHA handbook 4000.1 - Issued October 31st, 2023")
+        store_name = '4000.1_10.31.23'
+        guideline_gopher(store_name)
 
 
-        if guideline_option == 'FHA 4000.1 5/20/24':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("FHA handbook 4000.1 - Issued May 20th, 2024")
-            store_name = '4000.1_5.20.24'
-            guideline_gopher(store_name)
-
-        if guideline_option == 'FHA 4000.1 11/31/23':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("FHA handbook 4000.1 - Issued October 31st, 2023")
-            store_name = '4000.1_10.31.23'
-            guideline_gopher(store_name)
+    if guideline_option == 'Conventional (Fannie) 11/1/23':
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
+        st.header("Fannie Mae Selling Guide - Published November 1st, 2023")
+        store_name = 'FannieMae_11.1.23'
+        guideline_gopher(store_name)
 
 
-        if guideline_option == 'Conventional (Fannie) 11/1/23':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("Fannie Mae Selling Guide - Published November 1st, 2023")
-            store_name = 'FannieMae_11.1.23'
-            guideline_gopher(store_name)
+    if guideline_option == 'Conventional (Fannie) 5/1/24':
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
+        st.header("Fannie Mae Selling Guide - Published May 1st, 2024")
+        store_name = 'FannieMae_5.1.24'
+        guideline_gopher(store_name)
+    
+
+    if guideline_option == 'Conventional (Freddie) 11/1/23':
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
+        st.header("Current as of Bulletin 2023-22, Published on 11/01/23")
+        store_name = 'Freddie_11.1.23'
+        guideline_gopher(store_name)
 
 
-        if guideline_option == 'Conventional (Fannie) 5/1/24':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("Fannie Mae Selling Guide - Published May 1st, 2024")
-            store_name = 'FannieMae_5.1.24'
-            guideline_gopher(store_name)
+    if guideline_option == 'Conventional (Freddie) 6/12/24':
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
+        st.header("Current as of Bulletin 2023-22, Published on 6.12.24")
+        store_name = 'freddie_6.12.24'
+        guideline_gopher(store_name)
+
+
+    if guideline_option == 'USDA hb-1-3550 3/15/19':
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
+        st.header("USDA HB-1-3550 Loan Origination Handbook - Revised March 15th, 2019")
+        store_name = 'hb_1_3550'
+        guideline_gopher(store_name)
+    
+
+    # Take a different route if 'Upload my own'
+    if guideline_option == 'Upload my own PDF':
+
+        placeholder_01.empty()
+        placeholder_02.empty()
+        placeholder_03.empty()
         
+        pdf = st.sidebar.file_uploader("Upload your PDF here", type='pdf')
+        #st.sidebar.write(pdf) Debugging
 
-        if guideline_option == 'Conventional (Freddie) 11/1/23':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("Current as of Bulletin 2023-22, Published on 11/01/23")
-            store_name = 'Freddie_11.1.23'
-            guideline_gopher(store_name)
-
-
-        if guideline_option == 'Conventional (Freddie) 6/12/24':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("Current as of Bulletin 2023-22, Published on 6.12.24")
-            store_name = 'freddie_6.12.24'
-            guideline_gopher(store_name)
-
-
-        if guideline_option == 'USDA hb-1-3550 3/15/19':
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
-            st.header("USDA HB-1-3550 Loan Origination Handbook - Revised March 15th, 2019")
-            store_name = 'hb_1_3550'
-            guideline_gopher(store_name)
-        
-
-        # Take a different route if 'Upload my own'
-        if guideline_option == 'Upload my own PDF':
-
-            placeholder_01.empty()
-            placeholder_02.empty()
-            placeholder_03.empty()
+        if pdf is not None:
             
-            pdf = st.sidebar.file_uploader("Upload your PDF here", type='pdf')
-            #st.sidebar.write(pdf) Debugging
+            # Use MYMuPDF to extract text from PDF
+            pdf_bytes = io.BytesIO(pdf.read())
 
-            if pdf is not None:
+            doc = fitz.open("pdf", pdf_bytes)
+            text = ""
+            for page in doc:
+                text += page.get_text()
+                text += "!end_of_page!"
+
+
+            # Split PDF into chunks
+            text_splitter = RecursiveCharacterTextSplitter(
+                chunk_size=1000,
+                chunk_overlap=200,
+                length_function=len
+            )
+            chunks = text_splitter.split_text(text=text)
+
+
+            # Create embeddings
+            store_name = pdf.name[:-4] # Use this line to obtain name of document
+            store_name_pdf = store_name + '.pdf'
+            embeddings = OpenAIEmbeddings()
+            VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
+            with open(f"{store_name}.pkl", "wb") as f:
+                pickle.dump(VectorStore, f)
+            #st.write('SYSTEM MESSAGE: Embedding computation completed')
+
+
+            # UNCOMMENT TO DOWNLOAD VECTOR DATA
+            # with open(f'{store_name}.pkl', 'rb') as file:
+            #    st.download_button(
+            #        label="Download vector data",
+            #        data=file,
+            #        file_name=f'{store_name}.pkl',
+            #        mime='application/octet-stream'
+            #        )
+
+            pdf.seek(0)
+
+            # Upload PDF to AWS S3
+            if upload_to_aws(pdf, BUCKET_NAME, store_name_pdf):
+                generate_presigned_url(BUCKET_NAME, store_name_pdf, expiration=7200)
+
                 
-                # Use MYMuPDF to extract text from PDF
-                pdf_bytes = io.BytesIO(pdf.read())
+                # Empty main page and load PDF that's been selected
+                placeholder = st.empty()
 
-                doc = fitz.open("pdf", pdf_bytes)
-                text = ""
-                for page in doc:
-                    text += page.get_text()
-                    text += "!end_of_page!"
+                pdf_viewer = f'''
+                    <iframe 
+                    id="pdf-iframe"
+                    src= "https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/web/viewer.html?file=https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/{store_name}.pdf"
+                    width="900" 
+                    height="1000">
+                    </iframe>
+                    '''
+                placeholder.markdown(pdf_viewer, unsafe_allow_html=True)
 
-
-                # Split PDF into chunks
-                text_splitter = RecursiveCharacterTextSplitter(
-                    chunk_size=1000,
-                    chunk_overlap=200,
-                    length_function=len
-                )
-                chunks = text_splitter.split_text(text=text)
-
-
-                # Create embeddings
-                store_name = pdf.name[:-4] # Use this line to obtain name of document
-                store_name_pdf = store_name + '.pdf'
-                embeddings = OpenAIEmbeddings()
-                VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
-                with open(f"{store_name}.pkl", "wb") as f:
-                    pickle.dump(VectorStore, f)
-                #st.write('SYSTEM MESSAGE: Embedding computation completed')
+                # Initiate all session_state placeholders to make variables persistent across reruns
+                if 'query' not in st.session_state:
+                    st.session_state.query = ""
+                if 'response' not in st.session_state:
+                    st.session_state.response = ""
+                if 'last_query' not in st.session_state:
+                    st.session_state.last_query = ""
+                if 'docs' not in st.session_state:
+                    st.session_state.docs = ""
 
 
-                # UNCOMMENT TO DOWNLOAD VECTOR DATA
-                # with open(f'{store_name}.pkl', 'rb') as file:
-                #    st.download_button(
-                #        label="Download vector data",
-                #        data=file,
-                #        file_name=f'{store_name}.pkl',
-                #        mime='application/octet-stream'
-                #        )
+                # Ask the question, goes into session_state placeholder
+                st.session_state.query = st.sidebar.text_input("Ask your question here:")
 
-                pdf.seek(0)
 
-                # Upload PDF to AWS S3
-                if upload_to_aws(pdf, BUCKET_NAME, store_name_pdf):
-                    generate_presigned_url(BUCKET_NAME, store_name_pdf, expiration=7200)
+                # The magic
+                if st.session_state.query:
+                    st.session_state.docs = VectorStore.similarity_search(query=st.session_state.query, k=3)
+                    llm = ChatOpenAI(api_key=api_key, temperature=0, model_name='gpt-3.5-turbo')
+                    chain = load_qa_chain(llm=llm, chain_type="stuff")
 
+                    if st.session_state.query != st.session_state.last_query:
+                        st.session_state.increment = 0
+                        with get_openai_callback() as cb:
+                            st.session_state.response = chain.run(input_documents=st.session_state.docs, question=st.session_state.query)
+                            #st.sidebar.write(str(cb)) #Uncomment to see openAI callback
+                            log_user_request(st.session_state.query, store_name)
+
+                    st.sidebar.write(st.session_state.response)
+
+                    st.session_state.last_query = st.session_state.query
+
+
+                    # Logic to select between different search sources
+                    if 'increment' not in st.session_state:
+                        st.session_state.increment = 0
+
+                    if st.session_state.increment == 0:
+                        source = st.session_state.docs[0].page_content
+
+                    elif st.session_state.increment == 1:
+                        source = st.session_state.docs[1].page_content
+
+                    elif st.session_state.increment == 2:
+                        source = st.session_state.docs[2].page_content
+
+                    # Debugging sources on sidebar
+                    #st.sidebar.write("SOURCES:")
+                    #st.sidebar.write(docs)
+
+                    # MATCHING LOGIC AND DEBUGGING
+                    # Remove dashes right before a new line since pdf.js can't handle that - \n
+                    newline_dash_scrubbed = re.sub(r'-\n', '', source)
+
+                    # Replace \n with a character in front of it with a simple space
+                    newline_nospace_scrubbed = re.sub(r"(?<! )\n", ' ', newline_dash_scrubbed)
+
+                    # Replace any \n characters with a space in front of them
+                    concurrent_newlines_scrubbed = re.sub(r"(\s*\n\s*){2,}", '', newline_nospace_scrubbed)
+
+                    # Remove all newline characters \n
+                    source_scrubbed = re.sub(r'\n', '', concurrent_newlines_scrubbed)
+
+
+                    # If end of page, result is everything before !end_of_page! minus 50 characters. If not result is source_scrubbed
+                    pattern = r'(.*?)!end_of_page!'
+                    match = re.search(pattern, source_scrubbed)
+                    if match:
+                        pageend_result = match.group(1)[:-50]
+                    else:
+                        pageend_result = source_scrubbed
+
+
+                    # Any run-on words with a non-capital letter followed directly by a capital cut off front or end depending on where landing in length of string
+                    pattern = r'[a-z][A-Z]'
+                    match = re.search(pattern, pageend_result)
+                    if match:
+                        start_index = match.start()
+                        string_length = len(pageend_result)
+
+                        if start_index < string_length / 2:
+                            result = pageend_result[start_index + 1:]
+                        else:
+                            result = pageend_result[:start_index - 1]
+                    else:
+                        result = pageend_result
+
+                    # DEBUGGING for 'result
+                    # st.sidebar.write("RESULT")
+                    # st.sidebar.write(result)
                     
-                    # Empty main page and load PDF that's been selected
-                    placeholder = st.empty()
+                    # Search and highlight source text driven by search query at end of URL
+                    placeholder.empty()
+
+                    time.sleep(2)
 
                     pdf_viewer = f'''
                         <iframe 
                         id="pdf-iframe"
-                        src= "https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/web/viewer.html?file=https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/{store_name}.pdf"
+                        src= "https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/web/viewer.html?file=https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/{store_name}.pdf#search={result}"
                         width="900" 
                         height="1000">
                         </iframe>
                         '''
                     placeholder.markdown(pdf_viewer, unsafe_allow_html=True)
 
-                    # Initiate all session_state placeholders to make variables persistent across reruns
-                    if 'query' not in st.session_state:
-                        st.session_state.query = ""
-                    if 'response' not in st.session_state:
-                        st.session_state.response = ""
-                    if 'last_query' not in st.session_state:
-                        st.session_state.last_query = ""
-                    if 'docs' not in st.session_state:
-                        st.session_state.docs = ""
+                    time.sleep(1)
 
 
-                    # Ask the question, goes into session_state placeholder
-                    st.session_state.query = st.sidebar.text_input("Ask your question here:")
+                    # Button to cycle through sources
+                    if st.sidebar.button("See next source"):
+                        st.sidebar.empty()
 
+                    if st.session_state.increment == 0:
+                        st.session_state.increment += 1
+                        st.sidebar.write("<b>Viewing Source: 1</b>", unsafe_allow_html=True)
 
-                    # The magic
-                    if st.session_state.query:
-                        st.session_state.docs = VectorStore.similarity_search(query=st.session_state.query, k=3)
-                        llm = ChatOpenAI(api_key=api_key, temperature=0, model_name='gpt-3.5-turbo')
-                        chain = load_qa_chain(llm=llm, chain_type="stuff")
+                    elif st.session_state.increment == 1:
+                        st.session_state.increment += 1
+                        st.sidebar.write("<b>Viewing Source: 2</b>", unsafe_allow_html=True)
 
-                        if st.session_state.query != st.session_state.last_query:
-                            st.session_state.increment = 0
-                            with get_openai_callback() as cb:
-                                st.session_state.response = chain.run(input_documents=st.session_state.docs, question=st.session_state.query)
-                                #st.sidebar.write(str(cb)) #Uncomment to see openAI callback
-                                log_user_request(st.session_state.query, store_name)
-
-                        st.sidebar.write(st.session_state.response)
-
-                        st.session_state.last_query = st.session_state.query
-
-
-                        # Logic to select between different search sources
-                        if 'increment' not in st.session_state:
-                            st.session_state.increment = 0
-
-                        if st.session_state.increment == 0:
-                            source = st.session_state.docs[0].page_content
-
-                        elif st.session_state.increment == 1:
-                            source = st.session_state.docs[1].page_content
-
-                        elif st.session_state.increment == 2:
-                            source = st.session_state.docs[2].page_content
-
-                        # Debugging sources on sidebar
-                        #st.sidebar.write("SOURCES:")
-                        #st.sidebar.write(docs)
-
-                        # MATCHING LOGIC AND DEBUGGING
-                        # Remove dashes right before a new line since pdf.js can't handle that - \n
-                        newline_dash_scrubbed = re.sub(r'-\n', '', source)
-
-                        # Replace \n with a character in front of it with a simple space
-                        newline_nospace_scrubbed = re.sub(r"(?<! )\n", ' ', newline_dash_scrubbed)
-
-                        # Replace any \n characters with a space in front of them
-                        concurrent_newlines_scrubbed = re.sub(r"(\s*\n\s*){2,}", '', newline_nospace_scrubbed)
-
-                        # Remove all newline characters \n
-                        source_scrubbed = re.sub(r'\n', '', concurrent_newlines_scrubbed)
-
-
-                        # If end of page, result is everything before !end_of_page! minus 50 characters. If not result is source_scrubbed
-                        pattern = r'(.*?)!end_of_page!'
-                        match = re.search(pattern, source_scrubbed)
-                        if match:
-                            pageend_result = match.group(1)[:-50]
-                        else:
-                            pageend_result = source_scrubbed
-
-
-                        # Any run-on words with a non-capital letter followed directly by a capital cut off front or end depending on where landing in length of string
-                        pattern = r'[a-z][A-Z]'
-                        match = re.search(pattern, pageend_result)
-                        if match:
-                            start_index = match.start()
-                            string_length = len(pageend_result)
-
-                            if start_index < string_length / 2:
-                                result = pageend_result[start_index + 1:]
-                            else:
-                                result = pageend_result[:start_index - 1]
-                        else:
-                            result = pageend_result
-
-                        # DEBUGGING for 'result
-                        # st.sidebar.write("RESULT")
-                        # st.sidebar.write(result)
-                        
-                        # Search and highlight source text driven by search query at end of URL
-                        placeholder.empty()
-
-                        time.sleep(2)
-
-                        pdf_viewer = f'''
-                            <iframe 
-                            id="pdf-iframe"
-                            src= "https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/web/viewer.html?file=https://{BUCKET_NAME}.s3.us-west-1.amazonaws.com/{store_name}.pdf#search={result}"
-                            width="900" 
-                            height="1000">
-                            </iframe>
-                            '''
-                        placeholder.markdown(pdf_viewer, unsafe_allow_html=True)
-
-                        time.sleep(1)
-
-
-                        # Button to cycle through sources
-                        if st.sidebar.button("See next source"):
-                            st.sidebar.empty()
-
-                        if st.session_state.increment == 0:
-                            st.session_state.increment += 1
-                            st.sidebar.write("<b>Viewing Source: 1</b>", unsafe_allow_html=True)
-
-                        elif st.session_state.increment == 1:
-                            st.session_state.increment += 1
-                            st.sidebar.write("<b>Viewing Source: 2</b>", unsafe_allow_html=True)
-
-                        elif st.session_state.increment == 2:
-                            st.session_state.increment = 0
-                            st.sidebar.write("<b>Viewing Source: 3</b>", unsafe_allow_html=True)
-                    
+                    elif st.session_state.increment == 2:
+                        st.session_state.increment = 0
+                        st.sidebar.write("<b>Viewing Source: 3</b>", unsafe_allow_html=True)
+                
 
 
 
