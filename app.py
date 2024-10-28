@@ -265,7 +265,7 @@ def main():
     st.sidebar.header("'--' THE GUIDELINE GOPHER '--'")
 
     guideline_option = st.sidebar.selectbox('Select a translation', ('(Select a loan guideline)', 'Upload my own PDF', 'King James'))
-
+    guideline_option = 'King James'
     if guideline_option == 'King James':
         st.header("King James")
         store_name = 'King James'
