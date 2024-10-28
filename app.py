@@ -283,6 +283,7 @@ def main():
 
     guideline_option = st.sidebar.selectbox('Select a loan guideline', ('(Select a loan guideline)', 'Upload my own PDF', 'Conventional (Fannie) 5/1/24', 'Conventional (Fannie) 11/1/23', 'Conventional (Freddie) 6/12/24', 'Conventional (Freddie) 11/1/23', 'FHA 4000.1 5/20/24', 'FHA 4000.1 11/31/23', 'VA Pamphlet 26_7', 'USDA hb-1-3550 3/15/19'))
 
+    guideline_option == 'VA Pamphlet 26_7'
 
     if guideline_option == 'VA Pamphlet 26_7':
         placeholder_01.empty()
