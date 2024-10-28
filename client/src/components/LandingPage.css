@@ -1,0 +1,31 @@
+.landingContainer {
+  min-height: 100vh; /* Ensure it covers at least the viewport height */
+  padding-bottom: 50px; /* Adjust padding */
+}
+
+.landingContainer img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .landingContainer {
+    padding-bottom: 20px; /* Smaller padding for mobile */
+  }
+
+  .landingContainer img {
+    max-width: 100%;
+  }
+
+  .landingContainer > .MuiGrid-container {
+    height: auto; /* Adjust to auto for natural flow */
+  }
+
+  /* Remove the sticky positioning for .paperGrid */
+  .landingContainer .paperGrid {
+    width: 100%;
+    position: relative; /* Default positioning */
+    bottom: auto; /* Reset any bottom value */
+  }
+}
