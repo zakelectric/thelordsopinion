@@ -204,9 +204,17 @@ def guideline_gopher(store_name):
         else:
             pageend_result = source_scrubbed
 
+        # If 'Downloaded' is found in string, cut off last 50 characters
+        pattern = r'(.*?)Downloaded'
+        match = re.search(pattern, pageend_result)
+        if match:
+            nodownload_result = match.group(1)[:-50]
+        else:
+            nodownload_result = source_scrubbed
+
         # Any run-on words with a non-capital letter followed directly by a capital cut off front or end depending on where landing in length of string
         pattern = r'[a-z][A-Z]'
-        match = re.search(pattern, pageend_result)
+        match = re.search(pattern, nodownload_result)
         if match:
             start_index = match.start()
             string_length = len(pageend_result)
