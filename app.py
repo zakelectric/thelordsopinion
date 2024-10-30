@@ -200,7 +200,7 @@ def guideline_gopher(store_name):
         pattern = r'(.*?)!end_of_page!'
         match = re.search(pattern, source_scrubbed)
         if match:
-            pageend_result = match.group(1)[:-50]
+            pageend_result = match.group(1)[:-85]
         else:
             pageend_result = source_scrubbed
 
