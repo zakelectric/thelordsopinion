@@ -171,15 +171,12 @@ def guideline_gopher(store_name):
             source = st.session_state.docs[2].page_content
 
         # Debugging sources on sidebar
-        st.sidebar.write("SOURCE:")
-        st.sidebar.write(source)
-        st.sidebar.write(st.session_state.docs)
-        st.sidebar.write(st.session_state.docs[0].page_content)
-        st.sidebar.write(st.session_state.docs[1].page_content)
-        st.sidebar.write(st.session_state.docs[2].page_content)
-
-
-
+        # st.sidebar.write("SOURCE:")
+        # st.sidebar.write(source)
+        # st.sidebar.write(st.session_state.docs)
+        # st.sidebar.write(st.session_state.docs[0].page_content)
+        # st.sidebar.write(st.session_state.docs[1].page_content)
+        # st.sidebar.write(st.session_state.docs[2].page_content)
 
 
         # MATCHING LOGIC AND DEBUGGING
